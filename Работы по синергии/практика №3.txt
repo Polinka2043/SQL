@@ -1,0 +1,63 @@
+drop database if exists practika3;
+create database if not exists practika3;
+use practika3;
+create table if not exists pasport
+( id INT PRIMARY KEY,
+namber int,
+seria int ,
+kemvydan varchar(40),
+whenvydan date,
+kod varchar(15)
+);
+create table if not exists human
+(
+id INT PRIMARY KEY,
+lastname varchar(30),
+name varchar(30),
+patronymic varchar(30),
+year_birthday date,
+FOREIGN KEY (id) REFERENCES pasport(id)
+);
+create table if not exists kvartira
+(
+id INT ,
+address varchar(40) PRIMARY KEY,
+owner varchar(30),
+idkv INT,
+FOREIGN KEY (idkv) REFERENCES human(id)
+);
+create table if not exists pet
+(
+id int PRIMARY KEY,
+name varchar(20),
+poroda varchar(20),
+type varchar(20),
+owner varchar(30),
+idp int,
+index(idp, owner),
+FOREIGN KEY (idp) REFERENCES human(id)
+);
+drop database if exists practika32;
+create database if not exists practika32;
+use practika32;
+create table if not exists pochtaotdel
+( 
+id int PRIMARY KEY,
+address varchar(40),
+working_hours varchar(30)
+);
+create table if not exists service
+( 
+fio varchar(40),
+pasport int PRIMARY KEY,
+address varchar(40),
+nomer int,
+FOREIGN KEY (nomer) REFERENCES pochtaotdel(id)
+);
+create table if not exists posylki
+( ves int,
+kategoria varchar(40),
+treknomer int PRIMARY KEY,
+nomer int,
+FOREIGN KEY (nomer) REFERENCES pochtaotdel(id)
+);

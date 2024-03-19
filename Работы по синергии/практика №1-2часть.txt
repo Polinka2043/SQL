@@ -1,0 +1,26 @@
+show databases;
+drop database if exists practika12;
+create database if not exists practika12;
+use practika12;
+create table if not exists shop
+(id int,
+title varchar(30),
+address varchar(60),
+city varchar(30),
+`working hours` varchar(40),
+index(id,title)
+);
+insert into shop values
+(0, 'Пятерочка', 'ул.Семенова,47','Москва','8:00-22:00'),
+(1, 'Перекресток', 'ул.Семенова,48','Москва','круглосуточно'),
+(2, 'Пятерочка', 'ул.Вовы,32','Санкт-Петербург','8:30-22:30'),
+(3, 'Перекресток', 'ул.Татьяны Б.,1','Ижевск','9:00-21:00');
+select * from shop;
+update shop set title='Пятерочка 2' where title='Пятерочка';
+select * from shop;
+update shop set address='пр-т Орлова, 33' where city='Ижевск';
+select * from shop;
+update shop set title='Всегда открыто',address='Рядом с домом' where `working hours`='круглосуточно';
+select * from shop;
+delete from shop where id=2;
+select * from shop;

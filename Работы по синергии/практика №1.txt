@@ -1,0 +1,61 @@
+drop database if exists practika1;
+create database if not exists practika1;
+use practika1;
+create table if not exists users
+(Users int,
+name varchar(30),
+lastname varchar(30),
+Registration date
+);
+insert into users values
+(1,'-', '-','2009-09-09'),
+(2,'-','-','2009-09-15'),
+(3,'-', '-','2009-09-17'),
+(4,'-','-','2009-09-01'),
+(5,'-','-','2009-09-25');
+select * from users;
+create table if not exists soapopera
+(id int,
+name varchar(50)
+);
+insert into soapopera values
+(1,'Отчаянные домохозяйки'),
+(2,'Постучись в мою дверь'),
+(3,'Видеть'),
+(4,'Игра престолов'),
+(5,'Корона');
+select * from soapopera;
+insert into soapopera values (6,'Американская история ужасов');
+select * from soapopera;
+create table if not exists reviews
+(id int,
+name varchar(40),
+reaction varchar(1)
+);
+insert into reviews values
+(1,'noname1','+'),
+(2,'noname2','-'),
+(3,'P.P.','+'),
+(4,'P.S.','+'),
+(5,'users1','-');
+select * from reviews;
+
+create table if not exists genres
+(id int,
+name varchar(40),
+field varchar(40)
+);
+insert into genres values
+(1,'pank','song'),
+(2,'rock','song'),
+(3,'djazz','song'),
+(4,'drama','cinema'),
+(5,'triller','cinema');
+select * from genres;
+insert into genres(id,field) values (6,'cinema');
+select * from genres;
+update users set lastname='Сенаторов' where Registration='2009-09-09';
+update users set name='пользователь';
+select * from users;
+delete from genres where field='cinema';
+-- delete from genres;

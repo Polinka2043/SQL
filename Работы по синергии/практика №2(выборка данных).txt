@@ -1,0 +1,87 @@
+drop database if exists autosdb;
+create database if not exists autosdb;
+use autosdb;
+create table autos
+(
+id_trim int,
+make varchar(25),
+model varchar(50),
+generation varchar(50),
+year_from int,
+year_to int,
+series varchar(50),
+trim varchar(50),
+cylinder_layout varchar(50),
+boost_type varchar(50),
+drive_wheels varchar(50),
+transmission varchar(50)
+);
+insert into autos values 
+(1,'AC','ACE','1 generation',1993,2000,'Cabriolet','3.5 MT','V-type','Turbo','Front wheel drive','Manual'),
+(14,'AC','Cobra','1 generation',1990,2001,'Roadster','4.9 MT','V-type','Turbo','Front wheel drive','Manual'),
+(115,'Acura','TSX','1 generation',2003,2008,'Sedan','3.5 AT','Inline','Atmo','All wheel drive (AWD)','Manual'),
+(116,'Acura','TSX','1 generation',2003,2008,'Sedan','3.5 MT','Inline','Turbo','All wheel drive (AWD)','Manual'),
+(117,'Acura','TSX','2 generation',2008,2010,'Sedan 4-doors','2.4 AT','Inline','Turbo','All wheel drive (AWD)','Manual'),
+(118,'Acura','ZDX','1 generation',2009,2010,'Crossover','3.7 AT','V-type','Turbo','Four wheel drive (4WD)','Automatic'),
+(603,'Alfa Romeo','Stelvio','949',2017,2020,'Crossover','2.0 AT Q4','Inline','Atmo','Four wheel drive (4WD)','Automatic'),
+(604,'Alfa Romeo','Stelvio','949',2017,2020,'Crossover','2.2 D AT','Inline','Atmo','Four wheel drive (4WD)','Automatic'),
+(605,'Alfa Romeo','Stelvio','949',2017,2020,'Crossover','2.2 D AT','Inline','Atmo','Front wheel drive','Automatic'),
+(606,'Alfa Romeo','Stelvio','949',2017,2020,'Crossover','2.2 D AT Q4','Inline','Turbo','Four wheel drive (4WD)','Manual'),
+(607,'Alfa Romeo','Stelvio','949',2017,2020,'Crossover','2.2 D AT Q4','Inline','Turbo','All wheel drive (AWD)','Automatic'),
+(608,'Alfa Romeo','Stelvio','949',2017,2020,'Crossover','2.9 AT Q4','V-type','Turbo','Four wheel drive (4WD)','Automatic'),
+(609,'Alpina','B10','E39',1998,2004,'Sedan','3.3 MT','Inline','Atmo','All wheel drive (AWD)','Automatic'),
+(610,'Alpina','B10','E39',1998,2004,'Sedan','4.6 MT','Inline','Turbo','Front wheel drive','Automatic'),
+(611,'Alpina','B10','E39',1998,2004,'Sedan','4.8 MT','Inline','Turbo','Four wheel drive (4WD)','Continuously variable transmission (CVT)'),
+(952,'Aston Martin','Virage','2 generation',2011,2012,'Cabriolet Volante','5.9 AT','V-type','Atmo','All wheel drive (AWD)','Continuously variable transmission (CVT)'),
+(953,'Aston Martin','Virage','2 generation',2011,2012,'Coupe','5.9 AT','V-type','Atmo','Front wheel drive','Continuously variable transmission (CVT)'),
+(954,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.0 AT','Inline','Atmo','Four wheel drive (4WD)','Manual'),
+(955,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.0 AT','Inline','Turbo','All wheel drive (AWD)','Manual'),
+(956,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.0 AT','Inline','Turbo','Four wheel drive (4WD)','Manual'),
+(957,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.3 AT','Inline','Turbo','Front wheel drive','Manual'),
+(958,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.3 MT','Inline','Turbo','All wheel drive (AWD)','Manual'),
+(959,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.4 D MT','Inline','Atmo','Front wheel drive','Automatic'),
+(960,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.5 TDI MT','Inline','Turbo','Four wheel drive (4WD)','Automatic'),
+(961,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.6 AT','V-type','Atmo','Four wheel drive (4WD)','Automatic'),
+(962,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.6 MT','V-type','Atmo','All wheel drive (AWD)','Automatic'),
+(963,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.6 quattro AT','V-type','Atmo','Four wheel drive (4WD)','Automatic'),
+(964,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.6 quattro MT','V-type','Turbo','Four wheel drive (4WD)','Continuously variable transmission (CVT)'),
+(965,'Audi','100','4A/C4',1990,1994,'Avanat wagon','2.8 AT','V-type','Atmo','All wheel drive (AWD)','Continuously variable transmission (CVT)'),
+(62943,'Toyota','Porte','2 generation',2012,2020,'Minivan','1.5 CVT','Inline','Turbo','Front wheel drive','Continuously variable transmission (CVT)'),
+(62944,'Toyota','Porte','2 generation',2012,2020,'Minivan','1.4 CVT','V-type','Turbo','Front wheel drive','Continuously variable transmission (CVT)'),
+(62945,'Toyota','Porte','2 generation',2012,2020,'Minivan','1.8 CVT','Inline','Turbo','Four wheel drive (4WD)','Automatic'),
+(68495,'Volkswagen','Polo','2 generation',1981,1990,'Hatchback','1.0 MT','Inline','Atmo','Four wheel drive (4WD)','Automatic'),
+(70295,'Volvo', 'V40', '1 generation', 1996, 2000,'wagon', '1.6 MT', 'Inline','Turbo','Four wheel drive (4WD)','Automatic'),
+(70296,'Volvo','V40', '1 generation', 1996, 2000,'wagon','1.8 AT','Inline','Atmo','All wheel drive (AWD)','Manual'),
+(70297,'Volvo','V40', '1 generation', 1996, 2000,'wagon','1.8 MT','Inline','Turbo','All wheel drive (AWD)','Manual'),
+(70298,'Volvo','V40', '1 generation', 2014, 2015,'wagon','1.8 MT','Inline','','All wheel drive (AWD)','Manual');
+
+select *from autos;
+select make, generation from autos;
+select make as 'марка', model as 'модель', cylinder_layout as 'положение цилиндров', boost_type as 'наличие турбины' from autos;
+
+select make, model from autos 
+where cylinder_layout='V-type';
+
+select make, model, year_to from autos 
+where year_from >= 1999;
+
+select make, model from autos 
+where year_from >= 2001 and year_from <= 2009;
+ 
+select make, model from autos 
+where year_from between 2001 and 2009;
+
+select make, model from autos 
+where not series in ('Sedan', 'Crossover');
+
+select make, model from autos 
+where not series='Sedan' and not series='Crossover';
+
+select make, model, series, drive_wheels,transmission from autos 
+where year_from >= 2014 and boost_type='';
+
+select * from autos 
+where make like '%T%' or make like '%t%' or model like '%T%' or model like '%t%';
+
+select make, model,year_from,series,transmission from autos
+order by make limit 20;
